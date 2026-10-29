@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://csu3hi7mdou5i"]
-
-[ext_resource type="PackedScene" uid="uid://o77o7n0c80jr" path="res://assets/environment/uneven_plane.blend" id="1_6irxn"]
-[ext_resource type="Material" uid="uid://d3hlud32ibx1w" path="res://assets/environment/concrete.tres" id="2_nvmg6"]
-
-[node name="UnevenPlane" unique_id=105349662 instance=ExtResource("1_6irxn")]
-
-[node name="Plane" parent="." index="0" unique_id=98699018]
-material_override = ExtResource("2_nvmg6")

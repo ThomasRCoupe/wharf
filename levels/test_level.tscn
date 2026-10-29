@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://deev88c6sht3d"]
 
-[ext_resource type="PackedScene" uid="uid://csu3hi7mdou5i" path="res://environment/uneven_plane.tscn" id="1_46lwt"]
+[ext_resource type="PackedScene" uid="uid://bfnq7s8kkkt7k" path="res://environment/flat_plane.tscn" id="1_46lwt"]
 [ext_resource type="PackedScene" uid="uid://cplukjumodayh" path="res://characters/npcs/old_guy/old_guy.tscn" id="2_x25rp"]
 [ext_resource type="PackedScene" uid="uid://d0r405ultuljd" path="res://characters/player/player.tscn" id="3_gmgay"]
 
@@ -20,7 +20,7 @@ sky = SubResource("Sky_x25rp")
 
 [node name="Environment" type="Node3D" parent="." unique_id=1574418614]
 
-[node name="UnevenPlane" parent="Environment" unique_id=105349662 instance=ExtResource("1_46lwt")]
+[node name="flat_plane" parent="Environment" unique_id=552708353 instance=ExtResource("1_46lwt")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=999310258]
 environment = SubResource("Environment_gmgay")
@@ -32,6 +32,9 @@ shadow_enabled = true
 [node name="Characters" type="Node3D" parent="." unique_id=1970146724]
 
 [node name="OldGuy" parent="Characters" unique_id=18327686 instance=ExtResource("2_x25rp")]
-transform = Transform3D(-0.968951, 0, -0.24725279, 0, 1, 0, 0.24725279, 0, -0.968951, 0, -0.110998034, -2.545751)
+transform = Transform3D(-0.968951, 0, -0.24725279, 0, 1, 0, 0.24725279, 0, -0.968951, 0, 0.16217017, -2.545751)
+collision_layer = 1
+collision_mask = 1
 
 [node name="Player" parent="Characters" unique_id=1906812527 instance=ExtResource("3_gmgay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8784523, 0)

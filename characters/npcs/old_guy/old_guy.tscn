@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c5px4b3ejft1u" path="res://characters/npcs/npc.tscn" id="1_b154x"]
 [ext_resource type="PackedScene" uid="uid://dopjnwton44ld" path="res://assets/characters/old_guy/old_guy.blend" id="1_ycau3"]
+[ext_resource type="PackedScene" uid="uid://byrcl1d4evpjj" path="res://characters/character_mover.tscn" id="3_cl2mw"]
 
 [node name="OldGuy" unique_id=18327686 node_paths=PackedStringArray("animation_player") instance=ExtResource("1_b154x")]
 animation_player = NodePath("Graphics/oldmin12/AnimationPlayer")
@@ -33,5 +34,7 @@ bones/18/rotation = Quaternion(-0.44423217, 0.5782758, 0.4069363, 0.5501434)
 bones/19/rotation = Quaternion(-0.8041005, 0.058755465, 0.045568734, 0.5898252)
 bones/20/rotation = Quaternion(0.0016575219, 0.002638496, -0.12641115, 0.99197304)
 bones/21/rotation = Quaternion(0.058435407, -0.060473695, 0.7070966, 0.7020987)
+
+[node name="CharacterMover" parent="." index="2" unique_id=1302560348 instance=ExtResource("3_cl2mw")]
 
 [editable path="Graphics/oldmin12"]
