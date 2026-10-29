@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c5px4b3ejft1u"]
 
 [ext_resource type="Script" uid="uid://bhmp3gi82jiuo" path="res://characters/npcs/npc.gd" id="1_ayjmv"]
+[ext_resource type="PackedScene" uid="uid://kggmrqxg6uvg" path="res://characters/vision_manager.tscn" id="2_nqhan"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_us38c"]
 radius = 0.4
@@ -16,3 +17,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("CapsuleShape3D_us38c")
 
 [node name="Graphics" type="Node3D" parent="." unique_id=123291322]
+
+[node name="VisionManager" parent="." unique_id=233434408 instance=ExtResource("2_nqhan")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65, 0)

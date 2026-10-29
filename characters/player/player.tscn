@@ -9,7 +9,7 @@ height = 1.8
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_508ok"]
 
-[node name="Player" type="CharacterBody3D" unique_id=1906812527]
+[node name="Player" type="CharacterBody3D" unique_id=1906812527 groups=["player"]]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_508ok")
