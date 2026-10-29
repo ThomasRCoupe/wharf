@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://deev88c6sht3d"]
+
+[ext_resource type="PackedScene" uid="uid://csu3hi7mdou5i" path="res://environment/uneven_plane.tscn" id="1_46lwt"]
+[ext_resource type="PackedScene" uid="uid://cplukjumodayh" path="res://characters/npcs/old_guy/old_guy.tscn" id="2_x25rp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_46lwt"]
+sky_top_color = Color(0.67988074, 0.7747171, 0.9465999, 1)
+ground_bottom_color = Color(0.5803922, 0.6, 0.6431373, 1)
+ground_horizon_color = Color(0.50980395, 0.50980395, 0.5372549, 1)
+
+[sub_resource type="Sky" id="Sky_x25rp"]
+sky_material = SubResource("ProceduralSkyMaterial_46lwt")
+
+[sub_resource type="Environment" id="Environment_gmgay"]
+background_mode = 2
+sky = SubResource("Sky_x25rp")
+
+[node name="TestLevel" type="Node3D" unique_id=600160965]
+
+[node name="Environment" type="Node3D" parent="." unique_id=1574418614]
+
+[node name="UnevenPlane" parent="Environment" unique_id=105349662 instance=ExtResource("1_46lwt")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1247987671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=999310258]
+environment = SubResource("Environment_gmgay")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=506226320]
+transform = Transform3D(1, 0, 0, 0, 0.47826278, 0.87821686, 0, -0.87821686, 0.47826278, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Characters" type="Node3D" parent="." unique_id=1970146724]
+
+[node name="OldGuy" parent="Characters" unique_id=18327686 instance=ExtResource("2_x25rp")]
+transform = Transform3D(-0.968951, 0, -0.24725279, 0, 1, 0, 0.24725279, 0, -0.968951, 0, 0, -2.545751)

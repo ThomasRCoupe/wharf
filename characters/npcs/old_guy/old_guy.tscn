@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cplukjumodayh"]
+
+[ext_resource type="PackedScene" uid="uid://c5px4b3ejft1u" path="res://characters/npcs/npc.tscn" id="1_b154x"]
+[ext_resource type="PackedScene" uid="uid://dopjnwton44ld" path="res://assets/characters/old_guy/old_guy.blend" id="1_ycau3"]
+
+[node name="OldGuy" unique_id=18327686 node_paths=PackedStringArray("animation_player") instance=ExtResource("1_b154x")]
+animation_player = NodePath("Graphics/oldmin12/AnimationPlayer")
+
+[node name="oldmin12" parent="Graphics" parent_id_path=PackedInt32Array(123291322) index="0" unique_id=1189304834 instance=ExtResource("1_ycau3")]
+
+[node name="Armature" parent="Graphics/oldmin12" index="3" unique_id=1261445236]
+transform = Transform3D(0.31320202, 4.729219e-08, 0, -4.729219e-08, 0.31320202, 0, 0, 0, -0.31320202, 0, 0.8418446, 0)
+
+[node name="Skeleton3D" parent="Graphics/oldmin12/Armature" index="0" unique_id=400770162]
+bones/0/position = Vector3(1.9313213e-17, 0.076782495, -0.17395796)
+bones/0/rotation = Quaternion(0.005242837, 7.997364e-18, 1.3539771e-17, 0.99998623)
+bones/1/rotation = Quaternion(0.01900733, 1.1918774e-07, 2.2658504e-09, 0.99981934)
+bones/2/rotation = Quaternion(0.20470004, 2.9479545e-14, 4.880429e-08, 0.9788248)
+bones/3/rotation = Quaternion(-0.15643597, 0.0019805122, 0.003827473, 0.98767877)
+bones/4/rotation = Quaternion(0.07122777, -0.07142791, -0.74806243, 0.6559171)
+bones/5/rotation = Quaternion(-0.06882285, -0.068361536, -0.5841148, 0.80585366)
+bones/6/rotation = Quaternion(0.13178034, -0.021134753, -0.017682454, 0.9908959)
+bones/8/rotation = Quaternion(-0.036797892, 0.47530252, -0.006083475, 0.87903154)
+bones/9/rotation = Quaternion(0.07122758, 0.071427755, 0.7480625, 0.6559171)
+bones/10/rotation = Quaternion(-0.070261165, 0.06413728, 0.552504, 0.8280635)
+bones/11/rotation = Quaternion(0.0031185073, 0.0049284995, -0.0063621835, 0.9999628)
+bones/13/rotation = Quaternion(0.00777803, -0.5323497, 0.0056433612, 0.8464701)
+bones/14/rotation = Quaternion(-0.44423217, -0.5782758, -0.4069363, 0.5501434)
+bones/15/rotation = Quaternion(-0.80404246, -0.05951404, -0.046157017, 0.58978254)
+bones/16/rotation = Quaternion(0.0016587498, -0.0025976729, 0.124783956, 0.9921792)
+bones/17/rotation = Quaternion(0.0584354, 0.06047368, -0.70709664, 0.7020988)
+bones/18/rotation = Quaternion(-0.44423217, 0.5782758, 0.4069363, 0.5501434)
+bones/19/rotation = Quaternion(-0.8041005, 0.058755465, 0.045568734, 0.5898252)
+bones/20/rotation = Quaternion(0.0016575219, 0.002638496, -0.12641115, 0.99197304)
+bones/21/rotation = Quaternion(0.058435407, -0.060473695, 0.7070966, 0.7020987)
+
+[editable path="Graphics/oldmin12"]
