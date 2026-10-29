@@ -22,6 +22,8 @@ window/size/viewport_height=1296
 
 [layer_names]
 
+3d_physics/layer_1="Environment"
+3d_physics/layer_2="Characters"
 3d_physics/size/viewport_height=648
 3d_physics/size/viewport_width=1152
 

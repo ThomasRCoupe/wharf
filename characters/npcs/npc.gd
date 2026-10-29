@@ -15,3 +15,4 @@ func set_idle():
 func set_stride():
 	animation_player.play("stride")
 	cur_state = STATES.STRIDE
+ 
