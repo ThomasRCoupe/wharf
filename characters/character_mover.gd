@@ -12,9 +12,22 @@ var move_dir : Vector3
 func _ready():
 	character_body = get_parent() 
 	move_drag = float(move_acc) / max_speed
+
+
+func to_flat_dir(dir: Vector3) -> Vector3:
+	dir.y = 0.0
+	dir = dir.normalized()
+	
+	return dir
+
 	
 func set_move_dir(new_move_dir: Vector3): 
-	move_dir = new_move_dir
+	move_dir = to_flat_dir(new_move_dir)
+	
+	
+func is_moving():
+	return !move_dir.is_zero_approx()
+
 
 func _physics_process(delta: float):
 	if character_body.velocity.y > 0.0 and character_body.is_on_ceiling():
@@ -23,7 +36,7 @@ func _physics_process(delta: float):
 		character_body.velocity.y -= gravity * delta
 		
 	var drag = move_drag
-	if move_dir.is_zero_approx():
+	if !is_moving():
 		drag = stop_drag
 		
 	var flat_vel = character_body.velocity

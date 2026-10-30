@@ -1,41 +1,52 @@
 class_name NPC extends CharacterBody3D
 
 @export var animation_player : AnimationPlayer
-@export var animation_blend_time = 1.0
+@export var animation_blend_time = 0.5
 
 @onready var vision_manager: VisionManager = $VisionManager
-@onready var character_mover: CharacterMover = $CharacterMover
-@onready var player = get_tree().get_first_node_in_group("player")
+@onready var ai_character_mover: AICharacterMover = $AICharacterMover
+@onready var player: CharacterBody3D = get_tree().get_first_node_in_group("player")
 
-enum STATES { IDLE, STRIDE }
+enum STATES { IDLE, FOLLOW }
 var cur_state = STATES.IDLE
 
 func _ready():
 	set_idle()
+	
 
 func set_idle():
+	print("set idle")
 	animation_player.play("idle", animation_blend_time)
 	cur_state = STATES.IDLE
 	
-func set_stride():
-	animation_player.play("stride", animation_blend_time)
-	cur_state = STATES.STRIDE
+	
+func set_follow():
+	cur_state = STATES.FOLLOW
+	
  
 func _process(delta: float):
 	match cur_state:
 		STATES.IDLE:
 			process_idle_state(delta)
-		STATES.STRIDE:
+		STATES.FOLLOW:
 			process_stride_state(delta)
+			
 			
 func process_idle_state(delta: float):
 	if vision_manager.can_see_player():
-		set_stride()
+		set_follow()
+		return
+	
+	ai_character_mover.stop_moving()
+	
 		
 func process_stride_state(delta: float):
 	if !vision_manager.can_see_player():
 		set_idle()
+		return
 		
-	#var target_pos = player.global_position + Vector3.UP * 1.6
-	#var dir_to_target = global_position.direction_to(target_pos)
-	#character_mover.set_move_dir(dir_to_target)
+	ai_character_mover.start_moving(player.global_position)
+	if !ai_character_mover.is_moving() and animation_player.assigned_animation == "stride":
+		animation_player.play("idle", animation_blend_time)
+	elif ai_character_mover.is_moving() and animation_player.assigned_animation != "stride":
+		animation_player.play("stride", animation_blend_time)

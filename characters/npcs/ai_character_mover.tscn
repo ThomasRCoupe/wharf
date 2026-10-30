@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dpok1vagpyl27"]
+
+[ext_resource type="PackedScene" uid="uid://byrcl1d4evpjj" path="res://characters/character_mover.tscn" id="1_ccg8g"]
+[ext_resource type="Script" uid="uid://bvcg4npes1qq8" path="res://characters/npcs/ai_character_mover.gd" id="2_r7y5c"]
+
+[node name="AICharacterMover" unique_id=1302560348 instance=ExtResource("1_ccg8g")]
+script = ExtResource("2_r7y5c")
+turn_speed = 200.0
+stop_distance = 1.5
+start_distance = 2.5
+max_speed = 2.0
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." index="0" unique_id=69095003]

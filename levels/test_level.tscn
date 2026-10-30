@@ -4,6 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://cplukjumodayh" path="res://characters/npcs/old_guy/old_guy.tscn" id="2_x25rp"]
 [ext_resource type="PackedScene" uid="uid://d0r405ultuljd" path="res://characters/player/player.tscn" id="3_gmgay"]
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_gmgay"]
+vertices = PackedVector3Array(-49.5, 0.5, -49.5, -49.5, 0.5, 49.5, 49.5, 0.5, 49.5, 49.5, 0.5, -49.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+geometry_parsed_geometry_type = 0
+geometry_source_geometry_mode = 1
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_46lwt"]
 sky_top_color = Color(0.67988074, 0.7747171, 0.9465999, 1)
 ground_bottom_color = Color(0.5803922, 0.6, 0.6431373, 1)
@@ -18,7 +24,11 @@ sky = SubResource("Sky_x25rp")
 
 [node name="TestLevel" type="Node3D" unique_id=600160965]
 
-[node name="Environment" type="Node3D" parent="." unique_id=1574418614]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=284067543]
+visible = false
+navigation_mesh = SubResource("NavigationMesh_gmgay")
+
+[node name="Environment" type="Node3D" parent="." unique_id=1574418614 groups=["navigation_mesh_source_group"]]
 
 [node name="flat_plane" parent="Environment" unique_id=552708353 instance=ExtResource("1_46lwt")]
 

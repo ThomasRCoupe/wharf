@@ -4,3 +4,4 @@
 
 [node name="CharacterMover" type="Node3D" unique_id=1302560348]
 script = ExtResource("1_slvwx")
+stop_drag = 0.2
