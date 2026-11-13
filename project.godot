@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="wharf"
-run/main_scene="uid://deev88c6sht3d"
+run/main_scene="uid://dvt14n3rygvav"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,9 +20,14 @@ config/icon="res://icon.svg"
 window/size/viewport_width=2304
 window/size/viewport_height=1296
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/portals/plugin.cfg")
+
 [global_group]
 
 player=""
+navigation_mesh_source_group=""
 
 [input]
 

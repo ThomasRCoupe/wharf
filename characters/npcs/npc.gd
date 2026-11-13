@@ -15,7 +15,6 @@ func _ready():
 	
 
 func set_idle():
-	print("set idle")
 	animation_player.play("idle", animation_blend_time)
 	cur_state = STATES.IDLE
 	

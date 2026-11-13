@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://celtckk3p60a"]
+
+[ext_resource type="Texture2D" uid="uid://b26ilg61ahmwt" path="res://assets/environment/halls/white_crete_512.jpeg" id="1_kby13"]
+
+[resource]
+albedo_texture = ExtResource("1_kby13")
+uv1_scale = Vector3(0.125, 0.125, 0.125)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
