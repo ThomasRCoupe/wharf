@@ -17,8 +17,26 @@ ground_horizon_color = Color(0.50980395, 0.50980395, 0.5372549, 1)
 sky_material = SubResource("ProceduralSkyMaterial_7xaro")
 
 [sub_resource type="Environment" id="Environment_fk37i"]
-background_mode = 2
+background_mode = 1
+background_color = Color(0.36153567, 0.4779998, 0.8944472, 1)
 sky = SubResource("Sky_x25rp")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.2
+ssao_enabled = true
+ssao_radius = 2.0
+ssao_intensity = 1.0
+ssil_enabled = true
+glow_enabled = true
+glow_bloom = 0.15
+fog_enabled = true
+fog_light_color = Color(0.36153567, 0.4779998, 0.8944472, 1)
+fog_density = 0.001
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_wlpt5"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 25.0
+dof_blur_far_transition = 30.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_yj1un"]
 _surfaces = [{
@@ -48,16 +66,14 @@ geometry_source_geometry_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=910226658]
 environment = SubResource("Environment_fk37i")
+camera_attributes = SubResource("CameraAttributesPractical_wlpt5")
 
 [node name="Characters" type="Node3D" parent="." unique_id=1675606955]
 
 [node name="OldGuy" parent="Characters" unique_id=18327686 instance=ExtResource("1_wlpt5")]
 
 [node name="Player" parent="Characters" unique_id=1906812527 instance=ExtResource("1_kkp1p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4643376, 0)
-
-[node name="CharacterMover" parent="Characters/Player" index="3" unique_id=1302560348]
-stop_drag = 1.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.60814023, 0)
 
 [node name="Environment" type="Node3D" parent="." unique_id=902169572 groups=["navigation_mesh_source_group"]]
 
@@ -70,7 +86,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -12)
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 0, -6)
 
 [node name="hall_corner1" parent="Environment" unique_id=650332275 instance=ExtResource("2_kkp1p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.9472153, -6)
 
 [node name="hall_corner2" parent="Environment" unique_id=1497419760 instance=ExtResource("2_kkp1p")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 12, 0, -6)

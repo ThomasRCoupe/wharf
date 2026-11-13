@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dy2mnpvkt8pi0"]
+
+[ext_resource type="Shader" uid="uid://chr3gbwxyvjoc" path="res://fx/ps1_post_processor.gdshader" id="1_y1ncs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rxjx8"]
+shader = ExtResource("1_y1ncs")
+shader_parameter/viewport_size = Vector2(640, 480)
+shader_parameter/virtual_resolution = Vector2(320, 240)
+
+[node name="Ps1PostProcessor" type="CanvasLayer" unique_id=1341999899]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=804366180]
+material = SubResource("ShaderMaterial_rxjx8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

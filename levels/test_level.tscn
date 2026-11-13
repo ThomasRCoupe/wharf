@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://deev88c6sht3d"]
 
 [ext_resource type="PackedScene" uid="uid://bfnq7s8kkkt7k" path="res://environment/flat_plane.tscn" id="1_46lwt"]
+[ext_resource type="PackedScene" uid="uid://dy2mnpvkt8pi0" path="res://fx/ps1_post_processor.tscn" id="1_e7anx"]
 [ext_resource type="PackedScene" uid="uid://22y0orx2083p" path="res://environment/soviet_industrial_tower.tscn" id="1_o6mel"]
 [ext_resource type="PackedScene" uid="uid://666gcl1uv55f" path="res://environment/soviet_hive.tscn" id="2_w7r7j"]
 [ext_resource type="PackedScene" uid="uid://cplukjumodayh" path="res://characters/npcs/old_guy/old_guy.tscn" id="2_x25rp"]
@@ -21,10 +22,34 @@ ground_horizon_color = Color(0.50980395, 0.50980395, 0.5372549, 1)
 sky_material = SubResource("ProceduralSkyMaterial_46lwt")
 
 [sub_resource type="Environment" id="Environment_gmgay"]
-background_mode = 2
+background_mode = 1
+background_color = Color(0.528, 0.6277333, 0.88, 1)
 sky = SubResource("Sky_x25rp")
+ssr_enabled = true
+ssao_enabled = true
+ssao_intensity = 0.25
+ssil_enabled = true
+glow_enabled = true
+glow_normalized = true
+glow_bloom = 0.15
+fog_enabled = true
+fog_light_color = Color(0.528, 0.6277333, 0.88, 1)
+fog_light_energy = 1.2
+fog_density = 0.0025
+fog_sky_affect = 0.5
+adjustment_enabled = true
+adjustment_contrast = 1.2
+adjustment_saturation = 1.2
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_o6mel"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 30.0
+dof_blur_far_transition = 50.0
+dof_blur_amount = 0.01
 
 [node name="TestLevel" type="Node3D" unique_id=600160965]
+
+[node name="Ps1PostProcessor" parent="." unique_id=1341999899 instance=ExtResource("1_e7anx")]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=284067543]
 visible = false
@@ -69,15 +94,18 @@ transform = Transform3D(0.6666667, 0, 0, 0, 0.6666667, 0, 0, 0, 0.6666667, 0, 23
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=999310258]
 environment = SubResource("Environment_gmgay")
+camera_attributes = SubResource("CameraAttributesPractical_o6mel")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=506226320]
 transform = Transform3D(0.57755846, -0.7169319, 0.39042947, 7.942038e-10, 0.47826278, 0.878217, -0.81634945, -0.5072217, 0.27622476, 0, 0, 0)
 shadow_enabled = true
+shadow_reverse_cull_face = true
+shadow_blur = 2.0
 
 [node name="Characters" type="Node3D" parent="." unique_id=1970146724]
 
 [node name="OldGuy" parent="Characters" unique_id=18327686 instance=ExtResource("2_x25rp")]
-transform = Transform3D(0.88203645, 0, -0.4711812, 0, 1, 0, 0.4711812, 0, 0.88203645, 0, 0.16217017, 19.111353)
+transform = Transform3D(0.88203645, 0, -0.4711812, 0, 1, 0, 0.4711812, 0, 0.88203645, 0, 0.16217017, -0.26054955)
 collision_layer = 1
 collision_mask = 1
 
