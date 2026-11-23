@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://0qfgmyojfurc"]
+
+[ext_resource type="PackedScene" uid="uid://bj3fi4xsxbs4m" path="res://assets/environment/red_room/man_from_another_place_seated.blend" id="1_pw62c"]
+
+[node name="man_from_another_place_seated" unique_id=1627006488 instance=ExtResource("1_pw62c")]

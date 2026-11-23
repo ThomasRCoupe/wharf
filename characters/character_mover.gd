@@ -1,5 +1,8 @@
 class_name CharacterMover extends Node3D
 
+@onready var stairs_below_ray_cast_3d: RayCast3D = $StairsBelowRayCast3D
+@onready var stairs_ahead_ray_cast_3d: RayCast3D = $StairsAheadRayCast3D
+
 @export var gravity = 10.0
 @export var max_speed = 5.0
 @export var move_acc = 0.5
@@ -44,4 +47,3 @@ func _physics_process(delta: float):
 	character_body.velocity += move_acc * move_dir - flat_vel * drag
 	
 	character_body.move_and_slide()
-	

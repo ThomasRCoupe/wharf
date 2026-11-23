@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dw3bh7sstu7bj"]
+
+[ext_resource type="Texture2D" uid="uid://uaib2ter4m7j" path="res://assets/environment/red_room/fabric.png" id="1_bhonj"]
+
+[resource]
+albedo_texture = ExtResource("1_bhonj")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 2

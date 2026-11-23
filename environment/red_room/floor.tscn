@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b4trqgn36w35v"]
+
+[ext_resource type="PackedScene" uid="uid://bays2lt6jdq2u" path="res://assets/environment/red_room/plane.blend" id="1_b6na3"]
+[ext_resource type="Material" uid="uid://bi64lst2727qu" path="res://assets/environment/red_room/floor.tres" id="2_oy15v"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_oy15v"]
+data = PackedVector3Array(-25, 0, 25, 25, 0, -25, 25, 0, 25, -25, 0, 25, -25, 0, -25, 25, 0, -25)
+
+[node name="floor" unique_id=699481286 instance=ExtResource("1_b6na3")]
+
+[node name="plane" parent="." index="0" unique_id=1183483576]
+material_override = ExtResource("2_oy15v")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="plane" index="0" unique_id=437061827]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="plane/StaticBody3D" index="0" unique_id=278462476]
+shape = SubResource("ConcavePolygonShape3D_oy15v")

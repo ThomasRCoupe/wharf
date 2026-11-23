@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://nk5jvsres8tb"]
+
+[ext_resource type="PackedScene" uid="uid://duw32w74nsikv" path="res://assets/environment/red_room/venus5.blend" id="1_bkn47"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v22ek"]
+radius = 0.2
+height = 1.5
+
+[node name="venus5" unique_id=470412871 instance=ExtResource("1_bkn47")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="138" unique_id=381938683]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=900433948]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+shape = SubResource("CapsuleShape3D_v22ek")

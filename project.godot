@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="wharf"
-run/main_scene="uid://deev88c6sht3d"
+run/main_scene="uid://ysgcek5pp04x"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

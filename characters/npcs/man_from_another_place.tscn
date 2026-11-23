@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://du3celuslp6dt"]
+
+[ext_resource type="PackedScene" uid="uid://tworwujcmrkt" path="res://assets/environment/red_room/man_from_another_place4.blend" id="1_3xvwx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8ek47"]
+radius = 0.3
+height = 1.1
+
+[node name="man_from_another_place4" unique_id=1544326504 instance=ExtResource("1_3xvwx")]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." index="5" unique_id=723306397]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" index="0" unique_id=1543019097]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
+shape = SubResource("CapsuleShape3D_8ek47")

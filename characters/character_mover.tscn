@@ -5,3 +5,10 @@
 [node name="CharacterMover" type="Node3D" unique_id=1302560348]
 script = ExtResource("1_slvwx")
 stop_drag = 0.2
+
+[node name="StairsBelowRayCast3D" type="RayCast3D" parent="." unique_id=537030459]
+target_position = Vector3(0, -0.75, 0)
+
+[node name="StairsAheadRayCast3D" type="RayCast3D" parent="." unique_id=2020277098]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.5)
+target_position = Vector3(0, -0.5, 0)
