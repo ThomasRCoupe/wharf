@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dajjrcd1fyvvf"]
+
+[ext_resource type="PackedScene" uid="uid://buq52oaf8usuk" path="res://assets/environment/red_room/laura_palmer8.blend" id="1_o1t4d"]
+
+[node name="laura_palmer" unique_id=221138392 instance=ExtResource("1_o1t4d")]

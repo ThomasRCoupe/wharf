@@ -10,11 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://bpcxnr8arn57g" path="res://environment/red_room/chair.tscn" id="7_q0ty7"]
 [ext_resource type="PackedScene" uid="uid://b2g3kthk30kil" path="res://environment/red_room/stand.tscn" id="8_t4qlx"]
 [ext_resource type="PackedScene" uid="uid://nk5jvsres8tb" path="res://environment/red_room/venus.tscn" id="9_w2iim"]
+[ext_resource type="PackedScene" uid="uid://dajjrcd1fyvvf" path="res://characters/npcs/laura_palmer.tscn" id="10_iej1m"]
 
 [sub_resource type="Environment" id="Environment_wa15v"]
 background_mode = 1
 background_color = Color(1, 0.9285, 0.87, 1)
-background_energy_multiplier = 0.3
+background_energy_multiplier = 0.5
 ambient_light_energy = 0.5
 ssao_enabled = true
 ssil_enabled = true
@@ -22,6 +23,7 @@ ssil_radius = 0.1
 glow_enabled = true
 glow_intensity = 0.2
 glow_bloom = 0.5
+fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0, 0, 0, 1)
 fog_density = 1.0
@@ -124,6 +126,9 @@ transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 5, 0
 
 [node name="curtain_open2" parent="Environment/curtains" unique_id=2087727251 instance=ExtResource("6_n4qlt")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -5)
+
+[node name="laura_palmer" parent="Environment" unique_id=221138392 instance=ExtResource("10_iej1m")]
+transform = Transform3D(-0.6835795, 0, 0.7298761, 0, 1, 0, -0.7298761, 0, -0.6835795, -0.48453736, -1.1920929e-07, 2.118923)
 
 [node name="venus5" parent="." unique_id=470412871 instance=ExtResource("9_w2iim")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.1840541, 0.004847296, 4.0943704)
